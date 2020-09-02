@@ -7,5 +7,14 @@
 </head>
 <body>
     <h1>xzn.fr</h1>
+    <form id="contact-form" method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <input id="submit-btn" type="submit" value="Send">
+    </form>
+    <ul>
+        {% for url in urls %}
+        <li><a href="{{ url.original }}">{{ url.slug }}</a> - {{ url.original }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
