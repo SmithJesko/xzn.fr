@@ -3,17 +3,27 @@ html, body {
 	margin: 0;
     scroll-behavior: smooth;
     font-family: 'Russo One', sans-serif;
+    background-color: #000;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: red;
 }
 
 .logo-container {
     width: 100%;
     margin: auto;
+    margin-top: 20px;
 }
 
 #logo {
     width: 460px;
     margin: auto;
     font-size: 16px;
+    letter-spacing: normal;
 }
 
 .content {
@@ -22,8 +32,28 @@ html, body {
     margin: auto;
 }
 
-.content form {
+.url-form {
+    width: 500px;
     display: inline-block;
+}
+
+.url-form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background-color: #000;
+    color: #fff;
+    width: 96%;
+}
+
+.url-form ::placeholder {
+    color: #ccc;
+}
+
+.url-form #submit-btn {
+    border: 2px solid #fff;
+    width: 100%;
 }
 
 .shorties {
@@ -44,12 +74,57 @@ html, body {
 .floating-box {
     float: left;
     width: 350px;
-    height: 75px;
+    height: 100px;
     margin: 10px;
-    border: 3px solid #000;
-    /* display: inline-flex;
+    border: 3px solid #fff;
+    display: inline-flex;
     align-items: center;
-    justify-content: center; */
+    justify-content: center;
 }
 
 /* https://webdesign.tutsplus.com/tutorials/quick-tip-building-responsive-layouts-with-floats--cms-25625 */
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: 50px;
+    gap: 1px 1px;
+    grid-template-areas: "footer-left footer-center footer-right";
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    border-top: 2px solid #fff;
+}
+
+.footer-left {
+    grid-area: footer-left;
+    margin-top: 14px;
+}
+
+.footer-center {
+    grid-area: footer-center;
+}
+
+.footer-right {
+    grid-area: footer-right;
+}
+
+.footer-right ul
+{
+    margin-top: 15px;
+    padding: 0;
+}
+
+.footer-right ul li
+{
+    list-style-type: none;
+    display: inline;
+}
+
+.footer-right li:not(:first-child):before {
+    content: " | ";
+}
