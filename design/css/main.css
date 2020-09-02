@@ -1,0 +1,18 @@
+.wrapper {
+    width: 80%;
+    margin: auto;
+    counter-reset: line-number 0;
+}
+
+.floating-box {
+    float: left;
+    width: 350px;
+    height: 75px;
+    margin: 10px;
+    border: 3px solid #73AD21;
+    counter-increment: line-number 1
+}
+
+.floating-box:before {
+    content: counter(line-number) ": ";
+}
