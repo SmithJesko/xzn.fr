@@ -24,17 +24,23 @@ git clone [https://github.com/SmithJesko/xzn.fr.git](https://github.com/SmithJes
 . env/Scripts/activate
 ```
 
-3. Make database migrations and migrate:
+3. Install requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Make database migrations and migrate:
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-4. Run the server:
+5. Run the server:
 
 ```bash
 python manage.py runserver
 ```
 
-5. Access the website at `127.0.0.1:8000`
+6. Access the website at `127.0.0.1:8000`
