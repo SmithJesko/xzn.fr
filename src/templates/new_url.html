@@ -1,14 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xzn.fr</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Shortened URL Created Successfully</h1>
-    <h3>{{ shorty.original }}</h3>
-    <h3><a href="{{ shorty.original }}">{{ shorty.slug }}</a></h3>
-    <a href="/">Return home</a>
+    <div class="logo-container">
+        <div id="logo">
+            <pre>
+                                   $$$$$$\
+                                  $$  __$$\
+$$\   $$\ $$$$$$$$\ $$$$$$$\      $$ /  \__|$$$$$$\
+\$$\ $$  |\____$$  |$$  __$$\     $$$$\    $$  __$$\
+ \$$$$  /   $$$$ _/ $$ |  $$ |    $$  _|   $$ |  \__|
+ $$  $$<   $$  _/   $$ |  $$ |    $$ |     $$ |
+$$  /\$$\ $$$$$$$$\ $$ |  $$ |$$\ $$ |     $$ |
+\__/  \__|\________|\__|  \__|\__|\__|     \__|
+
+    Simple URL Sortener - Made by <a href="https://smithjesko.com" target="_blank">Smith Jesko</a>
+            </pre>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Shortened URL Created Successfully</h1>
+        <h3>{{ shorty.original }}</h3>
+        <h3><a href="{{ shorty.original }}">{{ shorty.slug }}</a></h3>
+        <a href="/">Return home</a>
+    </div>
 </body>
 </html>

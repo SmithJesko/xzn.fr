@@ -19,6 +19,9 @@ def index(request):
             shorty.slug = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(8))
             shorty.save()
             return HttpResponseRedirect('/new_url/{}'.format(shorty.slug))
+    
+    for url in urls:
+        print(url)
 
     context = {
         'form': form,

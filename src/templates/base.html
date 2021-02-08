@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,5 +16,84 @@
         <li><a href="{{ url.original }}">{{ url.slug }}</a> - {{ url.original }}</li>
         {% endfor %}
     </ul>
+</body>
+</html> -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xzn.fr</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo-container">
+        <div id="logo">
+            <pre>
+                                   $$$$$$\
+                                  $$  __$$\
+$$\   $$\ $$$$$$$$\ $$$$$$$\      $$ /  \__|$$$$$$\
+\$$\ $$  |\____$$  |$$  __$$\     $$$$\    $$  __$$\
+ \$$$$  /   $$$$ _/ $$ |  $$ |    $$  _|   $$ |  \__|
+ $$  $$<   $$  _/   $$ |  $$ |    $$ |     $$ |
+$$  /\$$\ $$$$$$$$\ $$ |  $$ |$$\ $$ |     $$ |
+\__/  \__|\________|\__|  \__|\__|\__|     \__|
+
+    Simple URL Sortener - Made by <a href="https://smithjesko.com" target="_blank">Smith Jesko</a>
+            </pre>
+        </div>
+    </div>
+
+    <!-- <hr> -->
+
+    <div class="content">
+        <form class="url-form" method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <input id="submit-btn" type="submit" value="Shorten URL">
+        </form>
+
+        <div class="shorties">
+            <h2 style="margin-bottom: 10px;">Some shortened urls:</h2>
+            <h6 style="margin-bottom: 30px;">(last 8)</h6>
+            <div class="lt-grid-container">
+                {% for url in urls %}
+                    <div class="lt-url lt-url-{{ forloop.counter }}">
+                        <h4><a href="{{ url.original }}">{{ url.slug }}</a></h4>
+                        <h4>{{ url.original }}</h4>
+                        <h4>Created by: <b>Anonymous</b></h4>
+                    </div>
+                    <!-- <p><a href="{{ url.original }}">{{ url.slug }}</a> - {{ url.original }}</p> -->
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <a href="https://github.com/SmithJesko/xzn.fr" target="_blank">View Code</a>
+        </div>
+        <div class="footer-center">
+            <p>&copy; 
+                <script>document.write(new Date().getFullYear());</script> 
+                <a href="https://smithjesko.com/" target="_blank">Smith Jesko</a> - All Rights Reserved
+            </p>
+        </div>
+        <div class="footer-right">
+            <ul>
+                <li><a href="https://smithjesko.com/" target="_blank">Privacy Policy</a></li>
+                <li><a href="https://smithjesko.com/" target="_blank">Report a Bug</a></li>
+                <li><a href="https://smithjesko.com/" target="_blank">More Projects</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
